@@ -172,6 +172,7 @@ class PASTA(abc.ABC):
         
         bsz, head_dim, tgt_len, src_len = attention_mask.size()
         dtype, device = attention_mask.dtype, attention_mask.device
+        print(f"{dtype=} {device=}")
         if head_dim != self.num_attn_head:
             attention_mask = attention_mask.expand(
                 bsz, self.num_attn_head, tgt_len, src_len
@@ -230,6 +231,7 @@ class PASTA(abc.ABC):
         
         bsz, head_dim, tgt_len, src_len = attention_mask.size()
         dtype, device = attention_mask.dtype, attention_mask.device
+        print(f"{dtype=} {device=}")
         if head_dim != self.num_attn_head:
             attention_mask = attention_mask.expand(
                 bsz, self.num_attn_head, tgt_len, src_len
