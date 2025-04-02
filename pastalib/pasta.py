@@ -220,6 +220,7 @@ class PASTA(abc.ABC):
             tuple, dict: return the modified `attention_mask`,
                 while not changing other input arguments. 
         """
+        print(f"{input_kwargs=}")
         if "attention_mask" in input_kwargs:
             attention_mask = input_kwargs['attention_mask'].clone()
         elif input_args is not None:
